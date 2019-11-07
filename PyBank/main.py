@@ -1,8 +1,22 @@
 import os
 import csv
 
-csvpath = os.path.join('C:', 'Users', 'Angie', 'Documents', 'GitHub', 'RU-JER-DATA-PT-10-2019-U-C', 'Homework', '03-Python Homework', 'PyBank,Resources', 'budget_data.csv')
+csvpath = os.path.join('..', 'Resources', 'budget_data.csv')
+file_to_output = os.path.join("analysis", "budget_analysis.txt")
 
-with open(csvpath, newline='') as csvfile:
-    csvreader = csv.reader(cvsfile, delimiter=',')
+total_months = 0
+prev_revenue = 0
+total_revenue = 0
+month_of_change = []
+revenue_change_list =[]
+greatest_increase = ['',0]
+greatest_decrease = ['', 9999999999999999999999]
+
+
+with open(csvpath) as csvfile:
+    csvreader = csv.DictReader(csvfile)
     
+for row in csvreader:
+    total_months = int(total_months) + 1
+    
+    total_revenue = 
